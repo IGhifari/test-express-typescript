@@ -1,4 +1,4 @@
-import prisma from "../api";
+import prisma from "../db";
 
 
 import { User } from "@prisma/client";
