@@ -28,7 +28,7 @@ async function createUser(req: Request, res: Response) {
 
     res.status(201).json({
         data: userData,
-        message: "Smartphone created successfully",
+        message: "User created successfully",
     });
     } catch (error) {
     if (error instanceof Error) {
@@ -62,7 +62,7 @@ async function updateUser(req: Request, res: Response) {
         );
         res.status(201).json({
       data: userData,
-      message: "Smartphone created successfully",
+      message: "Student created successfully",
     });
     } catch (error) {
         
