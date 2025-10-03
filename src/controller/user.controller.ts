@@ -16,7 +16,8 @@ async function createUser(req: Request, res: Response) {
     if (
         !(
         userData.name &&
-        userData.email 
+        userData.email &&
+        userData.password
         
         )
     ) {
