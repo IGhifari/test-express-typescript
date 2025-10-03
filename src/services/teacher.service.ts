@@ -1,6 +1,6 @@
 import prisma from "../db";
 
-
+import bcrypt from "bcrypt";
 import { Teacher } from "@prisma/client";
 
 async function getTeachers(){
@@ -12,12 +12,15 @@ async function insertTeacher({
     nig,
     name,
     email,
+    password
 }: Teacher) {
+    const hashedPassword = await bcrypt.hash(password, 10);
     return await prisma.teacher.create({
     data: {
         nig,
         name,
-        email
+        email,
+        password: hashedPassword
     },
     });
 }

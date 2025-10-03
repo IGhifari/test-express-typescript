@@ -60,7 +60,7 @@ async function updateUser(req: Request, res: Response) {
         );
         res.status(201).json({
       data: userData,
-      message: "Student created successfully",
+      message: "Student updated successfully",
     });
     } catch (error) {
         

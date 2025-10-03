@@ -1,6 +1,7 @@
 import prisma from "../db";
 
 import  {Student}  from "@prisma/client";
+import bcrypt from "bcrypt";
 async function getStudents(){
     return await prisma.student.findMany();
 }
@@ -9,12 +10,15 @@ async function insertStudent({
     name,
     age,
     email,
+    password
 }: Student) {
+    const hashedPassword = await bcrypt.hash(password, 10);
     return await prisma.student.create({
     data: {
         name,
         age,
-        email
+        email,
+        password: hashedPassword
     },
     });
 }
