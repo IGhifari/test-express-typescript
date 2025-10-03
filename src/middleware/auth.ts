@@ -9,7 +9,7 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
   const token = authHeader.split(" ")[1]; 
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || "8f2b2c1eac43d97a4f8e09a92ddbb57a4f03464a98a03e2c9a1875e4b812cc5f") as any;
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || "secret123") as any;
     (req as any).user = decoded; 
     next();
   } catch (error) {
