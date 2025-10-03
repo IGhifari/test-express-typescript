@@ -21,3 +21,11 @@ model Student {
     email   String   @unique
     createdAt DateTime @default(now())
 }
+
+model Teacher{
+    id      Int      @id @default(autoincrement())
+    nig     Int     @unique
+    name    String
+    email   String   @unique
+    createdAt DateTime @default(now())
+}

@@ -5,13 +5,12 @@ import { getUsers, insertUser, getUsersById , deleteUser, updateUserById } from 
 
 async function getAllUser(req: Request, res: Response) {
   const user = await getUsers();
-
   res.json(user);
 }
 
 
 async function createUser(req: Request, res: Response) {
-  try {
+    try {
     const userData = req.body;
 
     if (
@@ -43,8 +42,6 @@ async function getUserById(req: Request, res: Response) {
     const id = Number(req.params.id);
     const user = await getUsersById(id);
     res.json(user);
-
-
 }
 
 async function deleteUserById(req: Request, res: Response) {
