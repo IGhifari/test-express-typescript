@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import routerUser from "./routes/user.route";
 import routerTeachers from "./routes/teacher.route";
 import routerStudents from "./routes/student.route";
-import router from "./routes/auth";
+import routerAuth from "./routes/auth";
 import { authMiddleware } from "./middleware/auth";
 
 
@@ -20,7 +20,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello from the other side");
 });
 
-app.use("/auth", router);
+app.use("/auth", routerAuth);
 
 
 app.use("/api", routerUser);

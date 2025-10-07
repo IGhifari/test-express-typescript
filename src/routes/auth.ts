@@ -3,11 +3,11 @@ import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const router = Router();
+const routerAuth = Router();
 const prisma = new PrismaClient();
 
 
-router.post("/login", async (req, res) => {
+routerAuth.post("/login", async (req, res) => {
     const { email, password } = req.body;
 
     try {
@@ -31,4 +31,4 @@ router.post("/login", async (req, res) => {
 });
 
 
-export default router;
+export default routerAuth;
